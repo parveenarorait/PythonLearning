@@ -15,6 +15,10 @@ def main():
  printArmstrongNumber(1, 1000)
  print("================================================")
 
+ print("Displaying palindrome numbers between given start and end number")
+ printpalindromeNumber(1, 1000)
+ print("================================================")
+
  input()
 
 def printEvenNumbers(startNumber, endNumber):
@@ -51,6 +55,12 @@ def printArmstrongNumber(startNumber, endNumber):
 			continue
 		checkAndPrintIfArmstrongNumber(i)
 
+def printpalindromeNumber(startNumber, endNumber):
+	for i in range(startNumber, endNumber + 1):
+		if i <= 0:
+			continue
+		checkAndPrintIfPalindromeNumber(i)
+
 def getFactorial(num):
 	if num <= 1:
 		return 1
@@ -79,6 +89,16 @@ def checkAndPrintIfArmstrongNumber(number):
 		sumOfAllDigitCube += getCube(lastDigit);
 		number = number // 10
 	if originalNumber == sumOfAllDigitCube:
+		print(originalNumber)
+
+def checkAndPrintIfPalindromeNumber(number):
+	originalNumber = number
+	reversedNumber = 0;
+	while number > 0:
+		lastDigit = number % 10
+		reversedNumber = reversedNumber * 10 + lastDigit;
+		number = number // 10
+	if originalNumber == reversedNumber:
 		print(originalNumber)
 
 if __name__  == "__main__":
