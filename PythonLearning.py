@@ -27,6 +27,10 @@ def main():
  printPerfectNumbers(1, 1000)
  print("================================================")
 
+
+ employee = Employee("Parveen", "IT")
+ employee.printName()
+
  input()
 
 def printEvenNumbers(startNumber, endNumber):
@@ -145,6 +149,14 @@ def checkAndPrintIfPerfectNumber(number):
 			sumOfProperDivisors += i
 	if number == sumOfProperDivisors:
 		print(number)
+
+class Employee:
+  def __init__(self, name, department):	
+    self.name = name
+    self.department = department
+
+  def printName(self):	
+    print("Employee name is " + self.name)
 
 if __name__  == "__main__":
 	main()
