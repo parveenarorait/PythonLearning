@@ -7,7 +7,9 @@ def main():
  printPrimeNumbers(1, 1000)
  print("================================================")
 
+ print("Displaying strong numbers between given start and end number")
  printStrongNumber(1, 1000)
+ print("================================================")
 
 def printEvenNumbers(startNumber, endNumber):
 	for i in range(startNumber, endNumber + 1):
