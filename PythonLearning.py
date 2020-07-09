@@ -36,13 +36,15 @@ def printEvenNumbers(startNumber, endNumber):
 
 def printPrimeNumbers(startNumber, endNumber):
 	for i in range(startNumber, endNumber + 1):
+		if i <= 0:
+			continue
 		if i == 1:
 			continue
 		if i == 2:
 			print(2)
 			continue
 		isPrime = True;
-		for j in range(2, i):
+		for j in range(2, i // 2 + 1):
 			if i != j and i % j == 0:
 				isPrime = False
 				break
