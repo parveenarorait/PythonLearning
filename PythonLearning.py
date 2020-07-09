@@ -8,19 +8,23 @@ def main():
  print("================================================")
 
  print("Displaying strong numbers between given start and end number")
- printStrongNumber(1, 1000)
+ printStrongNumbers(1, 1000)
  print("================================================")
 
  print("Displaying armstrong numbers between given start and end number")
- printArmstrongNumber(1, 1000)
+ printArmstrongNumbers(1, 1000)
  print("================================================")
 
  print("Displaying palindrome numbers between given start and end number")
- printPalindromeNumber(1, 1000)
+ printPalindromeNumbers(1, 1000)
  print("================================================")
 
  print("Displaying fibonacci series for given number of count")
  printFibonacciSeries(20)
+ print("================================================")
+
+ print("Displaying perfect numbers between given start and end number")
+ printPerfectNumbers(1, 1000)
  print("================================================")
 
  input()
@@ -45,11 +49,11 @@ def printPrimeNumbers(startNumber, endNumber):
 		if isPrime:
 			print(i)
 
-def printStrongNumber(startNumber, endNumber):
+def printStrongNumbers(startNumber, endNumber):
 	for i in range(startNumber, endNumber + 1):
 		checkAndPrintIfStrongNumber(i)
 
-def printArmstrongNumber(startNumber, endNumber):
+def printArmstrongNumbers(startNumber, endNumber):
 	for i in range(startNumber, endNumber + 1):
 		if i < 0:
 			continue
@@ -61,7 +65,7 @@ def printArmstrongNumber(startNumber, endNumber):
 			continue
 		checkAndPrintIfArmstrongNumber(i)
 
-def printPalindromeNumber(startNumber, endNumber):
+def printPalindromeNumbers(startNumber, endNumber):
 	for i in range(startNumber, endNumber + 1):
 		if i <= 0:
 			continue
@@ -85,6 +89,12 @@ def printFibonacciSeries(count):
 			print(element3)
 			element1 = element2
 			element2 = element3
+
+def printPerfectNumbers(startNumber, endNumber):
+	for i in range(startNumber, endNumber):
+		if i < 6:
+			continue
+		checkAndPrintIfPerfectNumber(i)
 
 def getFactorial(num):
 	if num <= 1:
@@ -125,6 +135,14 @@ def checkAndPrintIfPalindromeNumber(number):
 		number = number // 10
 	if originalNumber == reversedNumber:
 		print(originalNumber)
+
+def checkAndPrintIfPerfectNumber(number):
+	sumOfProperDivisors = 0
+	for i in range(1, number // 2 + 1):
+		if number % i == 0:
+			sumOfProperDivisors += i
+	if number == sumOfProperDivisors:
+		print(number)
 
 if __name__  == "__main__":
 	main()
