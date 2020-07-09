@@ -16,7 +16,11 @@ def main():
  print("================================================")
 
  print("Displaying palindrome numbers between given start and end number")
- printpalindromeNumber(1, 1000)
+ printPalindromeNumber(1, 1000)
+ print("================================================")
+
+ print("Displaying fibonacci series for given number of count")
+ printFibonacciSeries(20)
  print("================================================")
 
  input()
@@ -47,7 +51,9 @@ def printStrongNumber(startNumber, endNumber):
 
 def printArmstrongNumber(startNumber, endNumber):
 	for i in range(startNumber, endNumber + 1):
-		if i <= 0:
+		if i < 0:
+			continue
+		if i == 0:
 			print(0)
 			continue
 		if(i == 1):
@@ -55,11 +61,30 @@ def printArmstrongNumber(startNumber, endNumber):
 			continue
 		checkAndPrintIfArmstrongNumber(i)
 
-def printpalindromeNumber(startNumber, endNumber):
+def printPalindromeNumber(startNumber, endNumber):
 	for i in range(startNumber, endNumber + 1):
 		if i <= 0:
 			continue
 		checkAndPrintIfPalindromeNumber(i)
+
+def printFibonacciSeries(count):
+	if count <= 0:
+		print("Invalid count")
+	elif count == 1:
+	    print(0)
+	elif count == 2:
+		print(0)
+		print(1)
+	else:
+		print(0)
+		print(1)
+		element1 = 0
+		element2 = 1
+		for i in range(2, count):
+			element3 = element1 + element2
+			print(element3)
+			element1 = element2
+			element2 = element3
 
 def getFactorial(num):
 	if num <= 1:
